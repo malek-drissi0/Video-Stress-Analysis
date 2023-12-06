@@ -1,0 +1,62 @@
+**Overview
+This project is designed to analyze stress levels in a video by integrating various factors such as emotion, mouth movement, head movement, and eyeblink frequency. The system employs pre-trained models for emotion detection and utilizes computer vision techniques for facial feature analysis.
+
+**Requirements
+Before running the project, make sure to install the required packages using the following commands:
+!pip install opencv-python
+!pip install deepface
+
+**Code Structure
+The project consists of the following components:
+
+1)Import Libraries and Modules:
+
+!pip install opencv-python
+!pip install deepface
+import cv2
+from deepface import DeepFace
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.interpolate import make_interp_spline
+
+2)Load Pre-trained Models:
+Load the emotion detection model using DeepFace:
+model = DeepFace.build_model("Emotion")
+
+3)Define emotion labels.
+Load Haar Cascade Classifiers:
+
+4)Load the face, mouth, and eye cascade classifiers for feature detection.
+Initialize Variables:
+
+5)Initialize variables and weights for stress factors.
+Video Processing Loop:
+*Read frames from the input video.
+*Detect faces, eyes, and mouths in the frames.
+*Calculate stress levels based on emotion, mouth movement, head movement, and eyeblink frequency.
+*Update stress level variables and store data for plotting.
+*Display the processed frames.
+
+6)Data Plotting:
+Interpolate stress level data for smoother curves.
+Plot stress levels over time for emotions, mouth movement, head movement, eyeblink, and aggregated stress.
+
+7)Release Resources:
+Release the video capture and close all windows.
+
+
+**How to Use
+1)Install the required packages.
+2)Adjust the paths to the Haar cascade classifiers (mouth_cascade and eye_cascade) based on your system)
+3)Set the correct path for the input video (video_path).
+4)Run the script, and the stress levels will be displayed over time for different factors.
+
+**Notes
+1)Ensure that the required Haar cascade XML files are available on your system.
+2)Modify weights and thresholds based on the desired sensitivity of stress factors.
+3)Press 'q' to exit the video processing loop.
+
+**References
+-OpenCV Documentation
+-DeepFace Documentation
+-Haarcascades GitHub Repository
